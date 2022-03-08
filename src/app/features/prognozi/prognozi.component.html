@@ -1,20 +1,19 @@
 <div class="weather-app">
-
     <div class="container">
         <h3 class="brand">ამინდი</h3>
         <div>
-            <h1 class="temp">16&#176;</h1>
+            <h1 class="temp">{{fahrenheitToCelsius() | number: '1.0-0'}}&#176;</h1>
 
             <div class="city-time">
-                <h1 class="name">London</h1>
+                <h1 class="name">{{WeatherInfo?.name}}</h1>
                 <small>
-                    <span class="time">11:25</span>
-                    <span class="date"> monday sep 19</span>
+                    <span class="time">{{getCurrentTime()}}</span>
+                    <span class="date"> {{getCurrentDate()  | date: 'EEEE, MMMM d, y'}}</span>
                 </small>
             </div>
             <div class="weather">
                 <img src="./././assets/images/Sun.PNG" alt="icon" class="icon" width="50" height="50">
-                <span class="condition">cloudy</span>
+                <span class="condition">{{WeatherInfo?.weather[0]?.main}}</span>
             </div>
         </div>
     </div>

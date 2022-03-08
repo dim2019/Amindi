@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-prognozi',
@@ -8,12 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrognoziComponent implements OnInit {
 
-  constructor(private _http: HttpClient) { }
+  public WeatherInfo: any
+
+  constructor(private _api: ApiService) { }
 
   ngOnInit(): void {
-    this._http.get<any>('https://thingproxy.freeboard.io/fetch/https://api.openweathermap.org/data/2.5/weather?q=gori&appid=299fb2133133f9d8fc214f5ae28ca753').subscribe(res=>{
-      console.log(res);
-    })
+    this._api.getWeatherInfoWithCityName('Tbilisi').subscribe(res=>{
+      // console.log(res);
+      this.WeatherInfo = res
+    })    
   }
+  
+  getCurrentTime(){
+    let today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes()   
+    return time
+  }
+  getCurrentDate(){
+    var today = new Date();
+    return today
+  }
+  fahrenheitToCelsius() {
+     var fToCel = (this.WeatherInfo?.main?.temp - 273.15);
+     return fToCel
+} 
 
 }
