@@ -1,89 +1,89 @@
-<div class="weather-app">
+<div class="weather-app" [style]="BackGroundImageChanger()">
     <div class="container">
         <h3 class="brand">ამინდი</h3>
         <div>
-            <h1 class="temp">{{fahrenheitToCelsius() | number: '1.0-0'}}&#176;</h1>
+            <h1 class="temp">{{KelvinToCelsius() | number: '1.0-0'}}&#176;</h1>
 
             <div class="city-time">
                 <h1 class="name">{{WeatherInfo?.name}}</h1>
                 <small>
-                    <span class="time">{{getCurrentTime()}}</span>
+                    <!-- <span class="time">{{getCurrentTime()}}</span> -->
                     <span class="date"> {{getCurrentDate()  | date: 'EEEE, MMMM d, y'}}</span>
                 </small>
             </div>
             <div class="weather">
-                <img src="./././assets/images/Sun.PNG" alt="icon" class="icon" width="50" height="50">
+                <img [src]="IconChanger()" alt="icon" class="icon" width="50" height="50">
                 <span class="condition">{{WeatherInfo?.weather[0]?.main}}</span>
             </div>
         </div>
     </div>
     <div class="panel">
-        <form id="locationInput">
-            <input type="text" class="search" placeholder="მოძებნე ლოკაცია...">
-            <button type="submit" class="submit"><i class="fas fa-search"></i></button>
-        </form>
+        <div id="locationInput">
+            <input #search type="text" class="search" placeholder="მოძებნე ლოკაცია...">
+            <button (click)="onSearchClick(search)" type="submit" class="submit"><i class="fas fa-search"></i></button>
+        </div>
 
         <ul class="cities">
-            <li class="city">თბილისი</li>
-            <li class="city">ქუთაისი</li>
-            <li class="city">ბათუმი</li>
-            <li class="city">გორი</li>
-            <li class="city">რუსთავი</li>
+            <li #list class="city" *ngFor="let city of CityGroup" (click)="onCityClick(list)">{{city}}</li>
         </ul>
         <ul class="details">
             <h4>ამინდის დეტალები</h4>
             <li>
                 <span>ტემპერატურა</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{KelvinToCelsius() | number: '1.0-0'}}&#176;</span>
             </li>
             <li>
                 <span>ტემპერატურის შეგრძნება</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{(WeatherInfo?.main?.feels_like - 273.15) |number: '1.0-0'}}&#176;</span>
             </li>
             <li>
                 <span> მაქსიმალური ტემპერატურა</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{(WeatherInfo?.main?.temp_max - 273.15) |number: '1.0-0'}}&#176;</span>
             </li>
             <li>
                 <span> მინიმალური ტემპერატურა</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{(WeatherInfo?.main?.temp_min - 273.15) |number: '1.0-0'}}&#176;</span>
             </li>
             <li>
                 <span>წნევა</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{WeatherInfo?.main?.pressure | number: '1.0-3'}} კპა</span>
             </li>
             <li>
                 <span>ტენიანობა</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{WeatherInfo?.main?.humidity}} %</span>
             </li>
             <li>
-                <span>ზღვის დონე</span>
-                <span class="cloud">89%</span>
+                <span>გრძედი</span>
+                <span class="cloud">{{WeatherInfo?.coord?.lat}}&#176;</span>
             </li>
             <li>
-                <span>ქარის სისწრფე</span>
-                <span class="cloud">89%</span>
+                <span>განედი</span>
+                <span class="cloud">{{WeatherInfo?.coord?.lon}}&#176;</span>
             </li>
             <li>
-                <span>ქარის გრადუსი</span>
-                <span class="cloud">89%</span>
+                <span>ქარის მიმართულება</span>
+                <span class="cloud">{{WeatherInfo?.wind?.deg}} %</span>
             </li>
             <li>
-                <span>ღეუბელი</span>
-                <span class="cloud">89%</span>
+                <span>ქარის სისწრაფე</span>
+                <span class="cloud">{{WeatherInfo?.wind?.speed}} მ/წმ</span>
             </li>
             <li>
                 <span>ხილვადობა</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{WeatherInfo?.visibility}} კმ</span>
             </li>
             <li>
                 <span>დროის სარტყელი</span>
-                <span class="cloud">89%</span>
+                <span class="cloud">{{WeatherInfo?.timezone}}</span>
+            </li>
+            <li>
+                <span>ქვეყნის კოდი</span>
+                <span class="cloud">{{WeatherInfo?.sys?.country}}</span>
             </li>
 
         </ul>
         <div>
-            <button class="btn btn-warning"><h4>რუკა</h4></button>
+            <button class="btn btn-warning" [routerLink]="'/maps'"><h4>რუკა</h4></button>
         </div>
     </div>
 </div>
