@@ -17,3 +17,17 @@ h1,
 h3 {
     font-weight: 400;
 }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-dialog-container {
+    background-color: #f0ad4e !important;
+}

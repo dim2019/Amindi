@@ -1,0 +1,16 @@
+.warn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: initial;
+        border: none;
+        cursor: pointer;
+        font-size: 21px;
+        color: red;
+        outline: none;
+    }
+}

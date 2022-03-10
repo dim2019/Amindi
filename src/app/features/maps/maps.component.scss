@@ -1,0 +1,16 @@
+.back {
+    img {
+        position: absolute;
+        z-index: 1;
+        width: 35px;
+        height: 35px;
+        background: initial;
+        left: 220px;
+        top: 2%;
+        cursor: pointer;
+    }
+    .full {
+        width: 100vw;
+        height: 100vh;
+    }
+}

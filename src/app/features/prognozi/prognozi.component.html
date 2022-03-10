@@ -19,7 +19,7 @@
     </div>
     <div class="panel">
         <div id="locationInput">
-            <input #search type="text" class="search" placeholder="მოძებნე ლოკაცია...">
+            <input #search (keyup)="onEnterClick(search, $event)" type="text" class="search" placeholder="მოძებნე ლოკაცია...">
             <button (click)="onSearchClick(search)" type="submit" class="submit"><i class="fas fa-search"></i></button>
         </div>
 
@@ -83,7 +83,7 @@
 
         </ul>
         <div>
-            <button class="btn btn-warning" [routerLink]="'/maps'"><h4>რუკა</h4></button>
+            <button class="btn btn-warning" [routerLink]="'/maps'">რუკა</button>
         </div>
     </div>
 </div>
