@@ -55,7 +55,7 @@ export class PrognoziComponent implements OnInit {
     if(this.WeatherInfo?.weather[0]?.main == "Clouds"){
       return `background-image: url('./././assets/images/Image1.PNG');`
     }else if(this.WeatherInfo?.weather[0]?.main == "Rain"){
-      return `background-image: url('./././assets/images/ImageRainyDay1.PNG');`
+      return `background-image: url('./././assets/images/ImageRainyNight1.PNG');`
     }else if(this.WeatherInfo?.weather[0]?.main == "Clear"){
       return `background-image: url('./././assets/images/ImageClearNight1.PNG');`
     }else{
