@@ -30,19 +30,19 @@
             <h4>ამინდის დეტალები</h4>
             <li>
                 <span>ტემპერატურა</span>
-                <span class="cloud">{{KelvinToCelsius() | number: '1.0-0'}}&#176;</span>
+                <span class="cloud">{{KelvinToCelsius() | number: '1.0-0'}}&#176;C</span>
             </li>
             <li>
                 <span>ტემპერატურის შეგრძნება</span>
-                <span class="cloud">{{(WeatherInfo?.main?.feels_like - 273.15) |number: '1.0-0'}}&#176;</span>
+                <span class="cloud">{{(WeatherInfo?.main?.feels_like - 273.15) |number: '1.0-0'}}&#176;C</span>
             </li>
             <li>
                 <span> მაქსიმალური ტემპერატურა</span>
-                <span class="cloud">{{(WeatherInfo?.main?.temp_max - 273.15) |number: '1.0-0'}}&#176;</span>
+                <span class="cloud">{{(WeatherInfo?.main?.temp_max - 273.15) |number: '1.0-0'}}&#176;C</span>
             </li>
             <li>
                 <span> მინიმალური ტემპერატურა</span>
-                <span class="cloud">{{(WeatherInfo?.main?.temp_min - 273.15) |number: '1.0-0'}}&#176;</span>
+                <span class="cloud">{{(WeatherInfo?.main?.temp_min - 273.15) |number: '1.0-0'}}&#176;C</span>
             </li>
             <li>
                 <span>წნევა</span>
@@ -82,8 +82,9 @@
             </li>
 
         </ul>
-        <div>
-            <button class="btn btn-warning" [routerLink]="'/maps'">რუკა</button>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-outline-light" [routerLink]="'/Maps'">რუკა</button>
+            <button class="btn btn-outline-light" routerLink="/CurrencyExchange">სავალუტო ბირჟა</button>
         </div>
     </div>
 </div>

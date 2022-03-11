@@ -1,0 +1,101 @@
+.page {
+    .search {
+        display: flex;
+        justify-content: space-between;
+        .input {
+            label {
+                font-family: "Roboto-Medium", sans-serif;
+                font-size: 12px;
+                color: black;
+            }
+            input {
+                font-size: 12px;
+                font-family: "Roboto-Medium", sans-serif;
+                color: black;
+                border: none;
+                width: auto;
+                max-width: 300px;
+                height: 40px;
+                outline: none;
+            }
+        }
+        .curency_option {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 7px;
+            p {
+                &:first-child {
+                    font-size: 12px;
+                    font-family: "Roboto-Medium", sans-serif;
+                    color: black;
+                    margin: 0 5px 0 5px;
+                }
+                &:last-child {
+                    margin-top: 15px;
+                    font-size: 12px;
+                    font-family: "Roboto-Medium", sans-serif;
+                    color: black;
+                }
+            }
+        }
+    }
+    .table {
+        thead {
+            border-bottom: none;
+            tr {
+                margin-bottom: 50px;
+                border-style: hidden !important;
+                th {
+                    font-size: 13px;
+                    font-family: "Roboto-Regular", sans-serif;
+                    color: white;
+                    i {
+                        color: black;
+                    }
+                    &:nth-child(2) {
+                        //margin-left: -50px !important;
+                    }
+                    &:not(:first-child) {
+                        position: relative;
+                        //left: -40px;
+                    }
+                }
+            }
+        }
+        tbody {
+            border-top: none;
+            tr {
+                td {
+                    position: relative;
+                    margin: 10px 15px 5px 15px;
+                    &:first-child {
+                        span {
+                            margin-left: 15px;
+                        }
+                    }
+                    font-size: 14px;
+                    font-family: "Roboto-Medium",
+                    sans-serif;
+                    //line-height: 12px;
+                    color:black;
+                    div {
+                        font-size: 24px;
+                    }
+                }
+                #second-child {
+                    position: relative;
+                    //right: 100px;
+                }
+            }
+            .overlay {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                height: 100px;
+                width: 100%;
+                background: linear-gradient( to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            }
+        }
+    }
+}

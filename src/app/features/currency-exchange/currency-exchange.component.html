@@ -1,0 +1,38 @@
+<div class="page">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let i of currency_arr">
+                <td>
+                    <div class="currency-flag currency-flag-{{i.code.toLocaleLowerCase()}}"></div>
+
+                    <td>
+                        {{i.code}}
+                    </td>
+                    <td>
+                        {{i.name}}
+                    </td>
+                    <td>
+                        {{i.date |date}}
+                    </td>
+                    <td [style]="i.color">
+                        {{i.rateFormated}}
+                    </td>
+                    <td>
+                        {{i.rate/i.quantity| number:"1.1-3"}}
+                    </td>
+                    <td [ngStyle]="{
+      color: colorChanger(i.diff)
+        ? 'green'
+        : 'red'
+    }">
+                        {{sign(i.diff)+i.diff| percent: "1.1-2" }}
+                    </td>
+                    <td>
+                        {{i.date| date:"mediumTime"}}
+                    </td>
+            </tr>
+
+            <div class="overlay"></div>
+        </tbody>
+    </table>
+</div>

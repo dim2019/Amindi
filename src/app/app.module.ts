@@ -10,6 +10,8 @@ import { MapsComponent } from './features/maps/maps.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopUpComponent } from './material/pop-up/pop-up.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { CurrencyExchangeComponent } from './features/currency-exchange/currency-exchange.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +20,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppComponent,
     PrognoziComponent,
     MapsComponent,
-    PopUpComponent
+    PopUpComponent,
+    CurrencyExchangeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     NgbModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatDialogModule
   ],
   providers: [],
