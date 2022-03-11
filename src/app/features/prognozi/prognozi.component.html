@@ -26,6 +26,10 @@
         <ul class="cities">
             <li #list class="city" *ngFor="let city of CityGroup" (click)="onCityClick(list)">{{city}}</li>
         </ul>
+        <ul class="d-flex justify-content-between">
+            <button class="btn btn-outline-light" routerLink="">ამინდი საათების მიხედვით</button>
+            <button class="btn btn-outline-light" routerLink="">7 დრის პროგნოზი</button>
+        </ul>
         <ul class="details">
             <h4>ამინდის დეტალები</h4>
             <li>

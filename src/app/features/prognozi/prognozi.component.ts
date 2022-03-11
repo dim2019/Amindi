@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { DialogService } from 'src/app/services/dialog.service';
@@ -13,9 +14,14 @@ export class PrognoziComponent implements OnInit {
 
   public CityGroup!: string[]
 
-  constructor(private _api: ApiService, private _dialog: DialogService) { }
+  constructor(private _api: ApiService, private _dialog: DialogService,private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get<any>('https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=minutely&appid=299fb2133133f9d8fc214f5ae28ca753').subscribe(res=>{
+      console.log(res);
+      
+    })
+    
     if(localStorage.getItem("cities") == null){
       this.CityGroup = ['Tbilisi','Kutaisi','Batumi','Gori','Rustavi']
       localStorage.setItem('cities', JSON.stringify(this.CityGroup));
