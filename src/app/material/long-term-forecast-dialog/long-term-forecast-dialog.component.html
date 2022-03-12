@@ -1,6 +1,7 @@
 <div class="main">
     <header>
-        <h3>ამინდის პროგნოზი</h3>
+        <h3 *ngIf="_data.message == 'hourly'">48 საათის ამინდის პროგნოზი</h3>
+        <h3 *ngIf="_data.message == 'daily'">8 დღის ამინდის პროგნოზი</h3>
         <button mat-flat-button [mat-dialog-close]="true">&times;</button>
     </header>
     <div class="content">
