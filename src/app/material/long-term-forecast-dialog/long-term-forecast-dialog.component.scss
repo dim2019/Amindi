@@ -1,0 +1,80 @@
+.main {
+    header {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+            color: white;
+        }
+        button {
+            width: 20px;
+            height: 20px;
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            background: initial;
+            border: none;
+        }
+    }
+    .content {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        .card {
+            &:hover {
+                background: rgba(102, 101, 101, 0.18);
+                box-shadow: 1px 3px 5px 8px rgba(58, 58, 58, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+            cursor: pointer;
+            width: 150px;
+            height: 160px;
+            background: rgba(68, 68, 68, 0.18);
+            backdrop-filter: blur(-10px);
+            box-shadow: 1px 3px 5px 8px rgba(41, 41, 41, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 226, 226, 0.18);
+            * {
+                color: white;
+            }
+            h5 {
+                text-align: center;
+                font-size: 18px;
+                font-weight: 600;
+                margin-top: 15px;
+            }
+            p {
+                text-align: center;
+                font-size: 14px;
+                font-weight: 300;
+            }
+            .wheather {
+                width: 40px;
+                height: 50px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+            .degree {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p {
+                    margin-left: 5px;
+                    margin-top: 10px;
+                    &:nth-child(2) {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

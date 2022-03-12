@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { LongTermForecastDialogComponent } from '../material/long-term-forecast-dialog/long-term-forecast-dialog.component';
 import { PopUpComponent } from '../material/pop-up/pop-up.component';
 
 @Injectable({
@@ -22,5 +23,18 @@ export class DialogService {
     setTimeout(() => {
       this.dialogRef.closeAll()
     }, 4000);
+  }
+  openForecastDialog(OptionTrigerToOpenDialog: 'hourly' | 'daily'){
+    this.dialogRef.open(LongTermForecastDialogComponent,{
+      width: '56%',
+      height: '90%',
+      position: {top: '35px', left: '25px'},
+      panelClass: 'LongTermForecastDialog',
+      id: 'LongTermForecastDialog',
+      disableClose: true,
+      data: {
+        message: OptionTrigerToOpenDialog
+      }
+    })
   }
 }

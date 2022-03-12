@@ -12,6 +12,8 @@ import { PopUpComponent } from './material/pop-up/pop-up.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CurrencyExchangeComponent } from './features/currency-exchange/currency-exchange.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LongTermForecastDialogComponent } from './material/long-term-forecast-dialog/long-term-forecast-dialog.component';
+
 
 
 
@@ -21,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PrognoziComponent,
     MapsComponent,
     PopUpComponent,
-    CurrencyExchangeComponent
+    CurrencyExchangeComponent,
+    LongTermForecastDialogComponent
   ],
   imports: [
     BrowserModule,

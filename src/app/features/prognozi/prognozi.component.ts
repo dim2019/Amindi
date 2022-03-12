@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { DialogService } from 'src/app/services/dialog.service';
@@ -14,13 +13,9 @@ export class PrognoziComponent implements OnInit {
 
   public CityGroup!: string[]
 
-  constructor(private _api: ApiService, private _dialog: DialogService,private http: HttpClient) { }
+  constructor(private _api: ApiService, private _dialog: DialogService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=minutely&appid=299fb2133133f9d8fc214f5ae28ca753').subscribe(res=>{
-      console.log(res);
-      
-    })
     
     if(localStorage.getItem("cities") == null){
       this.CityGroup = ['Tbilisi','Kutaisi','Batumi','Gori','Rustavi']
@@ -32,6 +27,7 @@ export class PrognoziComponent implements OnInit {
     }
     this._api.getWeatherInfoWithCityName(JSON.parse(localStorage.getItem("cities") as string)[0]).subscribe(res=>{
       this.WeatherInfo = res
+      localStorage.setItem('location', JSON.stringify([res.coord.lat, res.coord.lon]));
     })    
   }
 
@@ -73,12 +69,22 @@ export class PrognoziComponent implements OnInit {
 
   onCityClick(event: HTMLElement){
     this._api.getWeatherInfoWithCityName(event.innerHTML).subscribe(res=>{
-      this.WeatherInfo = res    
+      this.WeatherInfo = res      
       localStorage.setItem('activeCity', JSON.stringify(res.name));
+      localStorage.setItem('location', JSON.stringify([res.coord.lat, res.coord.lon]));
   
     })
   }
  
+
+  openForecastHourly(){
+    this._dialog.openForecastDialog('hourly')
+  }
+  openForecastDaily(){
+    this._dialog.openForecastDialog('daily')
+
+  }
+
   onSearchClick(event: HTMLInputElement){
     this._api.getWeatherInfoWithCityName(event.value)
     .subscribe(res =>{
@@ -93,6 +99,7 @@ export class PrognoziComponent implements OnInit {
     this.WeatherInfo = res
     event.value = ''
     localStorage.setItem('activeCity', JSON.stringify(res.name));
+    localStorage.setItem('location', JSON.stringify([res.coord.lat, res.coord.lon]));
     },(err)=>{
       this._dialog.openPopUp(err.error.message)
       event.value = ''
@@ -113,6 +120,7 @@ export class PrognoziComponent implements OnInit {
       this.WeatherInfo = res
       event.value = ''
       localStorage.setItem('activeCity', JSON.stringify(res.name));
+      localStorage.setItem('location', JSON.stringify([res.coord.lat, res.coord.lon]));
       },(err)=>{
         this._dialog.openPopUp(err.error.message)
         event.value = ''

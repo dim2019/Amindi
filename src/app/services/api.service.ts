@@ -17,7 +17,5 @@ export class ApiService {
     }))
   }
 
-  // dayly forcast API https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=minutely&appid=299fb2133133f9d8fc214f5ae28ca753
-
 
 }
