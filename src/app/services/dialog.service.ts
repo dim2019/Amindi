@@ -31,7 +31,7 @@ export class DialogService {
       position: {top: '35px', left: '25px'},
       panelClass: 'LongTermForecastDialog',
       id: 'LongTermForecastDialog',
-      disableClose: true,
+      disableClose: false,
       data: {
         message: OptionTrigerToOpenDialog
       }
