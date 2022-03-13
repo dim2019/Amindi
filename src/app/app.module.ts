@@ -14,8 +14,6 @@ import { CurrencyExchangeComponent } from './features/currency-exchange/currency
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LongTermForecastDialogComponent } from './material/long-term-forecast-dialog/long-term-forecast-dialog.component';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { NgScrollbarModule } from 'ngx-scrollbar';
-
 
 
 
