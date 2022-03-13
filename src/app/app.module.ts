@@ -13,6 +13,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { CurrencyExchangeComponent } from './features/currency-exchange/currency-exchange.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LongTermForecastDialogComponent } from './material/long-term-forecast-dialog/long-term-forecast-dialog.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
 
@@ -34,7 +35,15 @@ import { LongTermForecastDialogComponent } from './material/long-term-forecast-d
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxEchartsModule.forRoot({
+      /**
+       * This will import all modules from echarts.
+       * If you only need custom modules,
+       * please refer to [Custom Build] section.
+       */
+      echarts: () => import('echarts'), // or import('./path-to-my-custom-echarts')
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

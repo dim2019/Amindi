@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { DialogService } from 'src/app/services/dialog.service';
 
@@ -7,13 +7,16 @@ import { DialogService } from 'src/app/services/dialog.service';
   templateUrl: './prognozi.component.html',
   styleUrls: ['./prognozi.component.scss']
 })
-export class PrognoziComponent implements OnInit {
+export class PrognoziComponent implements OnInit, OnDestroy {
 
   public WeatherInfo: any
 
-  public CityGroup!: string[]
+  public CityGroup: string[] = []
 
   constructor(private _api: ApiService, private _dialog: DialogService) { }
+  ngOnDestroy(): void {
+    this.CityGroup = []
+  }
 
   ngOnInit(): void {
     
