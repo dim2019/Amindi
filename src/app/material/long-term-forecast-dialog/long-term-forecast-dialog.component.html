@@ -1,26 +1,26 @@
-<div class="main">
-    <header>
-        <h3 *ngIf="_data.message == 'hourly'">48 საათის ამინდის პროგნოზი</h3>
-        <h3 *ngIf="_data.message == 'daily'">8 დღის ამინდის პროგნოზი</h3>
-        <button mat-flat-button [mat-dialog-close]="true">&times;</button>
-    </header>
-    <div class="content">
-        <div class="card" *ngFor="let date of WeatherInfo">
-            <h5 *ngIf="_data.message == 'hourly'">{{HoursCalculator()}} საათი</h5>
-            <h5 *ngIf="_data.message == 'daily'">{{DaysCalculator()}}</h5>
-            <p *ngIf="_data.message == 'daily'">{{WeekDaysCalculator()}}</p>
-            <br *ngIf="_data.message == 'hourly'">
-            <div *ngIf="_data.message == 'hourly'" class="wheather" [style]="getIconForWeather(date)"></div>
-            <div *ngIf="_data.message == 'daily'" class="wheather" [style]="getIconForWeatherDaily(date)"></div>
-            <br>
-            <div class="degree">
-                <p *ngIf="_data.message == 'hourly'">{{date.temp - 273.15 | number: '1.0-0'}}&#176;</p>
-                <p *ngIf="_data.message == 'daily'">{{date.temp.day - 273.15 | number: '1.0-0'}}&#176;</p>
-                <p *ngIf="_data.message == 'daily'">{{date.temp.eve - 273.15 | number: '1.0-0'}}&#176;</p>
+    <div class="main">
+        <header>
+            <h3 *ngIf="_data.message == 'hourly'">48 საათის ამინდის პროგნოზი</h3>
+            <h3 *ngIf="_data.message == 'daily'">8 დღის ამინდის პროგნოზი</h3>
+            <button mat-flat-button [mat-dialog-close]="true">&times;</button>
+        </header>
+        <div class="content">
+            <div class="card" *ngFor="let date of WeatherInfo">
+                <h5 *ngIf="_data.message == 'hourly'">{{HoursCalculator()}} საათი</h5>
+                <h5 *ngIf="_data.message == 'daily'">{{DaysCalculator()}}</h5>
+                <p *ngIf="_data.message == 'daily'">{{WeekDaysCalculator()}}</p>
+                <br *ngIf="_data.message == 'hourly'">
+                <div *ngIf="_data.message == 'hourly'" class="wheather" [style]="getIconForWeather(date)"></div>
+                <div *ngIf="_data.message == 'daily'" class="wheather" [style]="getIconForWeatherDaily(date)"></div>
+                <br>
+                <div class="degree">
+                    <p *ngIf="_data.message == 'hourly'">{{date.temp - 273.15 | number: '1.0-0'}}&#176;</p>
+                    <p *ngIf="_data.message == 'daily'">{{date.temp.day - 273.15 | number: '1.0-0'}}&#176;</p>
+                    <p *ngIf="_data.message == 'daily'">{{date.temp.eve - 273.15 | number: '1.0-0'}}&#176;</p>
+                </div>
             </div>
         </div>
+    
+        <div class="echart" echarts [options]="chartoptions"></div>
+    
     </div>
-
-    <div class="echart" echarts [options]="chartoptions"></div>
-
-</div>

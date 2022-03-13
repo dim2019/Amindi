@@ -9,11 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapsComponent } from './features/maps/maps.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopUpComponent } from './material/pop-up/pop-up.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CurrencyExchangeComponent } from './features/currency-exchange/currency-exchange.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LongTermForecastDialogComponent } from './material/long-term-forecast-dialog/long-term-forecast-dialog.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 
 
@@ -43,7 +44,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
        * please refer to [Custom Build] section.
        */
       echarts: () => import('echarts'), // or import('./path-to-my-custom-echarts')
-    }),
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

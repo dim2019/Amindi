@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
-
+  
 
   public WeatherInfo!: any[]
 
