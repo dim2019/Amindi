@@ -63,6 +63,7 @@ export class CurrencyExchangeComponent implements OnInit {
 
 /////////////////////////////////////////////////////////////////////////////ვალუტები
     this._http.get<any>("https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json").subscribe(s=>{
+      console.log(s)
       for(let i in (s[0].currencies as any)){
         (this.currency_arr as any)[i]={...(s[0].currencies as any)[i],icon:this.flag_picker(),color:(this.rand_color()?"background-color:rgba(254, 77, 151,9%);    ":"background-color:rgba(109, 210, 48,9%);")};
     }
