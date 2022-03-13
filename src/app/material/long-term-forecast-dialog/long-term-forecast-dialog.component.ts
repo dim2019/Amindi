@@ -82,9 +82,7 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
      moderate rain
      */
 
-  getIconForWeather(date: any){
-    console.log(date.weather[0].description);
-    
+  getIconForWeather(date: any){    
     if(date.weather[0].description === 'clear sky' && this.hours < 20 && this.hours > 6){
       return 'background-image: url(../../../assets/images/ForecastIcons/ClearSkyDay.PNG);'
     } else if (date.weather[0].description === 'clear sky') {
@@ -116,7 +114,6 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
     }
   }
   getIconForWeatherDaily(date: any){
-    console.log(date.weather[0].description);
     if((date?.temp?.day - 273.15) < 0){
       return 'background-image: url(../../../assets/images/ForecastIcons/Freezy.png);'
     }else if((date?.temp?.day - 273.15) > 30 || date.weather[0].description === 'clear sky'){
