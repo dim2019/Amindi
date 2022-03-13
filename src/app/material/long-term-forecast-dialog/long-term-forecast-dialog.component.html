@@ -10,13 +10,17 @@
             <h5 *ngIf="_data.message == 'daily'">{{DaysCalculator()}}</h5>
             <p *ngIf="_data.message == 'daily'">{{WeekDaysCalculator()}}</p>
             <br *ngIf="_data.message == 'hourly'">
-            <div class="wheather" [style]="getIconForWeather(date)"></div>
+            <div *ngIf="_data.message == 'hourly'" class="wheather" [style]="getIconForWeather(date)"></div>
+            <div *ngIf="_data.message == 'daily'" class="wheather" [style]="getIconForWeatherDaily(date)"></div>
             <br>
             <div class="degree">
                 <p *ngIf="_data.message == 'hourly'">{{date.temp - 273.15 | number: '1.0-0'}}&#176;</p>
                 <p *ngIf="_data.message == 'daily'">{{date.temp.day - 273.15 | number: '1.0-0'}}&#176;</p>
                 <p *ngIf="_data.message == 'daily'">{{date.temp.eve - 273.15 | number: '1.0-0'}}&#176;</p>
             </div>
+        </div>
+        <div class="charts">
+            <!-- <apx-chart [series]="series" [chart]="chart" [title]="title"></apx-chart> -->
         </div>
     </div>
 </div>

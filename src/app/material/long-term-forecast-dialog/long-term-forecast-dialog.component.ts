@@ -20,6 +20,7 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
 
   public activeDay: number = 0
 
+
   constructor(@Inject(MAT_DIALOG_DATA) public _data: any, private _http: HttpClient, private strategy: ChangeDetectorRef) { }
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
         this.strategy.detectChanges()
         
       }
-    })    
+    })   
   }
 
   HoursCalculator(){
@@ -74,6 +75,8 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
      */
 
   getIconForWeather(date: any){
+    console.log(date.weather[0].description);
+    
     if(date.weather[0].description === 'clear sky' && this.hours < 20 && this.hours > 6){
       return 'background-image: url(../../../assets/images/ForecastIcons/ClearSkyDay.PNG);'
     }else if(date.weather[0].description === 'clear sky'){
@@ -88,7 +91,7 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
       return 'background-image: url(../../../assets/images/ForecastIcons/BrokenCloudsNight.PNG);'
     }else if(date.weather[0].description === 'overcast clouds'){
       return 'background-image: url(../../../assets/images/ForecastIcons/OvercastClouds.PNG);'
-    }else if(date.weather[0].description === 'llight snow'){
+    }else if(date.weather[0].description === 'light snow'){
       return 'background-image: url(../../../assets/images/ForecastIcons/LightSnow.PNG);'
     }else if(date.weather[0].description === 'snow'){
       return 'background-image: url(../../../assets/images/ForecastIcons/Snow1.png);'
@@ -98,6 +101,24 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
       return 'background-image: url(../../../assets/images/ForecastIcons/rainy1.png);'
     }else if(date.weather[0].description === 'moderate rain'){
       return 'background-image: url(../../../assets/images/ForecastIcons/rainy2.png);'
+    }else if(date.weather[0].description === 'few clouds'){
+      return 'background-image: url(../../../assets/images/ForecastIcons/weather_06.png);'
+    }else{
+      return 'background-image: url(../../../assets/images/ForecastIcons/windy.png);'
+    }
+  }
+  getIconForWeatherDaily(date: any){
+    console.log(date.weather[0].description);
+    if((date?.temp?.day - 273.15) < 0){
+      return 'background-image: url(../../../assets/images/ForecastIcons/Freezy.png);'
+    }else if((date?.temp?.day - 273.15) > 30 || date.weather[0].description === 'clear sky'){
+      return 'background-image: url(../../../assets/images/ForecastIcons/ClearSkyDay.PNG);'
+    }else if(date.weather[0].description === 'snow' || date.weather[0].description === 'light snow'){
+      return 'background-image: url(../../../assets/images/ForecastIcons/Snow1.png);'
+    }else if(date.weather[0].description === 'rain and snow' || date.weather[0].description === 'moderate rain' || date.weather[0].description === 'heavy intensity rain' || date.weather[0].description === 'light rain'){
+      return 'background-image: url(../../../assets/images/ForecastIcons/LightRain.png);'
+    }else if(date.weather[0].description === 'scattered clouds' || date.weather[0].description === 'broken clouds' || date.weather[0].description === 'overcast clouds' || date.weather[0].description === 'few clouds'){
+      return 'background-image: url(../../../assets/images/ForecastIcons/CloudComputing.png);'
     }else{
       return 'background-image: url(../../../assets/images/ForecastIcons/windy.png);'
     }

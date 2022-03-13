@@ -34,7 +34,7 @@ import { LongTermForecastDialogComponent } from './material/long-term-forecast-d
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
