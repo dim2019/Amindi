@@ -1,3 +1,4 @@
+@import url("../../../../node_modules/currency-flags/dist/currency-flags.min.css");
 .page {
     .search {
         display: flex;
@@ -53,9 +54,9 @@
                     i {
                         color: black;
                     }
-                    &:nth-child(2) {
-                        //margin-left: -50px !important;
-                    }
+                    // &:nth-child(2) {
+                    //     //margin-left: -50px !important;
+                    // }
                     &:not(:first-child) {
                         position: relative;
                         //left: -40px;

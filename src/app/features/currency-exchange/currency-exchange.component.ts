@@ -37,7 +37,7 @@ export class CurrencyExchangeComponent implements OnInit {
       crypto: ["", [Validators.pattern(regex)]],
     });
   }
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this._http
       .get<crypto>(
         "https://thingproxy.freeboard.io/fetch/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=bfbf3671-1d38-4c37-8b8a-e0179e729bca"
@@ -60,26 +60,23 @@ export class CurrencyExchangeComponent implements OnInit {
           this.iconMap.set(i.asset_id, i.url);
         }
   });
-
-/////////////////////////////////////////////////////////////////////////////ვალუტები
-    this._http.get<any>("https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json").subscribe(s=>{
-      for(let i in (s[0].currencies as any)){
-        (this.currency_arr as any)[i]={...(s[0].currencies as any)[i],icon:this.flag_picker(),color:(this.rand_color()?"background-color:rgba(254, 77, 151,9%);    ":"background-color:rgba(109, 210, 48,9%);")};
-    }
+  this._http.get<any>("https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json").subscribe(s=>{
+    console.log(s);
+    for(let i in (s[0].currencies as any)){
+      (this.currency_arr as any)[i]={...(s[0].currencies as any)[i],color:(this.rand_color()?"background-color:rgba(254, 77, 151,9%);":"background-color:rgba(109, 210, 48,9%);")};
+        // console.log(this.currency_arr);   
+      }
     
-  })
-
-
-
-/////////////////////////////////////////////////////////////////////////////ვალუტები
-
-
+   })
 
   }
+
 
   mathRounding(event: any) {
     return event.toFixed(2);
   }
+
+
   imageHasBeenLoaded(event: any) {
     event.url =
       "https://www.pngplay.com/wp-content/uploads/2/Bitcoin-PNG-Background.png";
@@ -92,6 +89,7 @@ export class CurrencyExchangeComponent implements OnInit {
       return "+";
     } else return "";
   }
+
   colorChanger(event: number): boolean {
     if (event >= 0) {
       return true;
@@ -105,10 +103,7 @@ export class CurrencyExchangeComponent implements OnInit {
       obj.symbol.startsWith(this.filterString.toUpperCase())
     );
   }
-  private flag_picker():string{
-    const url_:string=`../../../../assets/images/auth/${Math.floor(Math.random()* (5 - 1 + 1) + 1)}.png`;
-    return url_;
-}
+  
   public rand_color():boolean{
     return Math.random()>0.5;
   }

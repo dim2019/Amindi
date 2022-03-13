@@ -3,8 +3,7 @@
         <tbody>
             <tr *ngFor="let i of currency_arr">
                 <td>
-                    <div class="currency-flag currency-flag-{{i.code.toLocaleLowerCase()}}"></div>
-
+                    <div class="currency-flag currency-flag-{{i.code.toLowerCase()}}"></div>
                     <td>
                         {{i.code}}
                     </td>
