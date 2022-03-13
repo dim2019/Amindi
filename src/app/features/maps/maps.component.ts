@@ -25,7 +25,7 @@ export class MapsComponent implements OnInit {
         this.location = [res.coord.lat, res.coord.lon]    
         new google.maps.Map(document.getElementById("map")!,{
           center: {lat: this.location[0], lng: this.location[1]},
-          zoom: 100, 
+          zoom: 11, 
           // mapTypeId: "satellite",
           
         })
