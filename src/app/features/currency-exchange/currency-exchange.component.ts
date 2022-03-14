@@ -31,6 +31,8 @@ export class CurrencyExchangeComponent implements OnInit {
 
   public currencyArray: any[] = [];
 
+  public cryptoOrCurrency !: "currency" | "crypto"
+
   constructor(private _http: HttpClient, private fb: FormBuilder) {
     let regex = /^[a-zA-Z]+$/;
     this.form = this.fb.group({
@@ -67,6 +69,8 @@ export class CurrencyExchangeComponent implements OnInit {
       }
     
    })
+
+   this.changeTab("currency")
 
   }
 
@@ -105,6 +109,10 @@ export class CurrencyExchangeComponent implements OnInit {
   
   public rand_color():boolean{
     return Math.random()>0.5;
+  }
+
+  changeTab(tabname : "currency" | "crypto") {
+    this.cryptoOrCurrency = tabname
   }
 
   ngOnDestroy(): void {
