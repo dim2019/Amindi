@@ -1,6 +1,10 @@
 <div class="page">
+    <ul class="navigation">
+        <li (click)="changeTab('currency')" [ngClass]="{'active' : cryptoOrCurrency == 'currency'}">ქვეყნების ვალუტა</li>
+        <li (click)="changeTab('crypto')" [ngClass]="{'active' : cryptoOrCurrency == 'crypto'}">კრიპტო ვალუტა</li>
+    </ul>
     <!-- C U R R E N C Y -->
-    <table class="table" *ngIf="true">
+    <table class="table" *ngIf="cryptoOrCurrency == 'currency'">
         <tbody>
             <tr *ngFor="let i of currency_arr">
                 <td>
@@ -34,7 +38,7 @@
 
     <!-- C R Y P T O -->
 
-    <div *ngIf="false" class="page">
+    <div *ngIf="cryptoOrCurrency == 'crypto'" class="page">
         <div class="search">
             <form class="input" [formGroup]="form">
                 <label for="cryptoSearcch">
