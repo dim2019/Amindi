@@ -8,7 +8,30 @@
     .header {
         width: 100%;
         height: 50px;
-        // background-color: aquamarine;
+        background-color: rgb(249, 241, 241);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 100px;
+        padding-right: 100px;
+        background: linear-gradient( to bottom, rgb(199, 166, 166, 1) 0%, rgba(185, 161, 161, 0.5) 40%, rgb(255, 255, 255, 1) 100%);
+        header {
+            img {
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+            }
+        }
+        button {
+            background: initial;
+            border: none;
+            font-size: 14px;
+            transition: .2s;
+            &:hover {
+                color: rgb(23, 162, 184);
+                transition: .2s;
+            }
+        }
     }
     .content {
         width: 100%;
@@ -22,7 +45,7 @@
             top: 0;
             left: 0;
             .main {
-                margin-top: 10%;
+                // margin-top: 10%;
                 p {
                     text-align: center;
                     span {
@@ -33,6 +56,10 @@
                             font-size: 18px;
                         }
                     }
+                }
+                h2 {
+                    top: 0%;
+                    text-align: center;
                 }
                 .container {
                     // background-color: red;
