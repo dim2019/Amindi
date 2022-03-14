@@ -100,6 +100,27 @@
                         select {
                             margin-top: -10px;
                         }
+                        option {
+                            border: 1px solid #e5e5e5;
+                            padding: 10px;
+                        }
+                        select {
+                            font-size: 14px;
+                            border: none;
+                            // width: 100%;
+                            background: white;
+                            outline: none;
+                            &::-webkit-scrollbar {
+                                width: 2px;
+                                height: 2px;
+                                background-color: rgb(78, 78, 78);
+                                /* or add it to the track */
+                            }
+                            /* Add a thumb */
+                            &::-webkit-scrollbar-thumb {
+                                background: white;
+                            }
+                        }
                     }
                 }
             }
