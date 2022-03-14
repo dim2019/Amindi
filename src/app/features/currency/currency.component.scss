@@ -32,6 +32,17 @@
                 transition: .2s;
             }
         }
+        .burger {
+            width: 25px;
+            height: 25px;
+            margin-left: -65px !important;
+            right: 2%;
+            background-image: url('../../../assets/images/menu.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
     }
     .content {
         width: 100%;
@@ -159,5 +170,14 @@
             // overflow: scroll;
             // padding-left: 300px;
         }
+        // .burger-section {
+        //     position: fixed;
+        //     right: 4%;
+        //     top: 10%;
+        //     background-color: wheat;
+        //     width: 40%;
+        //     height: 80%;
+        //     // backdrop-filter: blur(10px);
+        // }
     }
 }

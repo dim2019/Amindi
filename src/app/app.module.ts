@@ -17,6 +17,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { NumberSuffixPipe } from './features/currency-exchange/currencyPipe';
 import { CurrencyComponent } from './features/currency/currency.component';
 import { AddingcurrencyComponent } from './features/currency/addingcurrency/addingcurrency.component';
+import { BurgerComponent } from './material/burger/burger.component';
 
 
 
@@ -30,7 +31,8 @@ import { AddingcurrencyComponent } from './features/currency/addingcurrency/addi
     LongTermForecastDialogComponent,
     NumberSuffixPipe,
     CurrencyComponent,
-    AddingcurrencyComponent
+    AddingcurrencyComponent,
+    BurgerComponent
   ],
   imports: [
     BrowserModule,

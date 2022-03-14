@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { BurgerComponent } from '../material/burger/burger.component';
 import { LongTermForecastDialogComponent } from '../material/long-term-forecast-dialog/long-term-forecast-dialog.component';
 import { PopUpComponent } from '../material/pop-up/pop-up.component';
 
@@ -35,6 +36,15 @@ export class DialogService {
       data: {
         message: OptionTrigerToOpenDialog
       }
+    })
+  }
+  openBurgerBar(){
+    this.dialogRef.open(BurgerComponent,{
+      width: '30%',
+      height: '82%',
+      position: {top: '50px', left: '10px'},
+      id: 'burgerBar',
+      disableClose: false,
     })
   }
 }

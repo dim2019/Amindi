@@ -1,12 +1,14 @@
 <div class="main-container">
-    <div class="header">
+    <div class="header" *ngIf="true">
+        <div *ngIf="true" class="burger" (click)="burger()"></div>
         <header>
             <img src="./././assets/images/logo-removebg-preview.png" alt="img">
         </header>
-        <button routerLink="/Prognozi">უკან დაბრუნება</button>
+        <!-- <button routerLink="/Prognozi">უკან დაბრუნება</button> -->
+
     </div>
     <div class="content">
-        <div class="left-section">
+        <div class="left-section" *ngIf="false">
             <div class="main">
                 <div class="head">
                     <h2>კურსი</h2>
@@ -62,5 +64,13 @@
             <!-- <div *ngFor="let currency of currencyArray " class="currency-flag currency-flag-{{currency.toLowerCase()}}"></div> -->
         </div>
         <app-currency-exchange class="right-section"></app-currency-exchange>
+        <!-- <div class="burger-section">
+            <ul>
+                <li>ამინდის პროგნოზი</li>
+                <li>ვალუტის კონვერტაცია</li>
+                <li>რუკა</li>
+            </ul>
+        </div> -->
+
     </div>
 </div>

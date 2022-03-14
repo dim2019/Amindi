@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HTTPdata } from 'src/app/interfaces/httpdata';
 import { HTTPdataBindedRates } from 'src/app/interfaces/httpdata-binded-rates';
 import { CurrencyService } from 'src/app/services/currency.service';
+import { DialogService } from 'src/app/services/dialog.service';
 @Component({
   selector: 'app-currency',
   templateUrl: './currency.component.html',
@@ -40,7 +41,7 @@ export class CurrencyComponent implements OnInit {
 
   
 
-  constructor(private http: HttpClient, public fb: FormBuilder, private service: CurrencyService) {
+  constructor(private http: HttpClient, public fb: FormBuilder, private service: CurrencyService, private dialog: DialogService) {
    }
 
   ngOnInit(): void {
@@ -129,7 +130,10 @@ export class CurrencyComponent implements OnInit {
    
 
   }
-
+  
+  burger(){
+    this.dialog.openBurgerBar()
+  }
 
   get sum(){
     return this.service.Sum
