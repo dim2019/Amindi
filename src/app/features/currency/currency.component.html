@@ -16,8 +16,11 @@
                             <input (keyup)="onKeyUpInputOne($event)" formControlName="curencyType1" type="number" placeholder="quantity " [value]="SumFirstInput | number: '1.0-2'">
                             <select (change)="activitySelectorForFirstInput($event) " name="currency " id="currency-input1">
                             <option *ngFor="let currency of currencyArray "
-                             [value]="currency" [selected]="currency == 'EUR'">{{currency}}</option>
+                             [value]="currency" [selected]="currency == 'EUR'">{{currency}}
+                            </option>
                         </select>
+
+
                         </div>
                     </div>
                     <div class="row">
@@ -50,6 +53,7 @@
                     </div>
                 </div>
             </div>
+            <!-- <div *ngFor="let currency of currencyArray " class="currency-flag currency-flag-{{currency.toLowerCase()}}"></div> -->
         </div>
         <app-currency-exchange class="right-section"></app-currency-exchange>
     </div>

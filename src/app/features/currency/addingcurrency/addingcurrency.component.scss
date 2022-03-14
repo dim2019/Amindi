@@ -5,6 +5,7 @@
             justify-content: space-around;
             align-items: center;
             margin-top: 10px;
+            margin-left: -5px;
             input {
                 background: initial;
                 border: 1px solid black;
@@ -31,6 +32,7 @@
                 // width: 100%;
                 background: white;
                 outline: none;
+                margin-left: 10px;
                 &::-webkit-scrollbar {
                     width: 2px;
                     height: 2px;
@@ -41,6 +43,11 @@
                 &::-webkit-scrollbar-thumb {
                     background: white;
                 }
+            }
+            .x {
+                color: red;
+                cursor: pointer;
+                font-size: 18px;
             }
         }
     }
