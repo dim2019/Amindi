@@ -51,6 +51,8 @@ export class PrognoziComponent implements OnInit, OnDestroy {
       return './././assets/images/RainyDay.PNG'
     }else if(this.WeatherInfo?.weather[0]?.main == "Clear"){
       return './././assets/images/Sun.PNG'
+    }else if(this.WeatherInfo?.weather[0]?.main == "Smoke"){
+      return './././assets/images/smoke.png'
     }else{
       return './././assets/images/Snow.PNG'
     }
@@ -65,6 +67,8 @@ export class PrognoziComponent implements OnInit, OnDestroy {
       return `background-image: url('./././assets/images/Mist.PNG');`
     }else if(this.WeatherInfo?.weather[0]?.main == "Clear"){
       return `background-image: url('./././assets/images/ImageClearNight1.PNG')`
+    }else if(this.WeatherInfo?.weather[0]?.main == "Smoke"){
+      return `background-image: url('./././assets/images/SmokeWeatherBACK.PNG')`
     }else{
       return `background-image: url('./././assets/images/ImageSnowDay1.PNG');`
     }
