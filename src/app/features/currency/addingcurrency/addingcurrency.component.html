@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div #itemToAdd class="first-inp">
+            <div [formGroup]="form" class="first-inp-inp">
+                <div (click)="on_click_delete_LIstener()" class="x" style="--l: 2px; --color: red"></div>
+                <input (keyup)="on_Input_Click($event)" type="number" placeholder="quantity" formArrayName="curencyType3" [value]="InputValue">
+                <select name="currency " id="currency-input2" (change)="Select_Change_Listener($event)">
+                    <option *ngFor="let currency of CurencyNameArray"
+                    [selected]="currency == SelectedValue"
+                     [value]="currency" >{{currency}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

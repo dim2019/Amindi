@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CurrencyExchangeComponent } from './features/currency-exchange/currency-exchange.component';
+import { CurrencyComponent } from './features/currency/currency.component';
 import { MapsComponent } from './features/maps/maps.component';
 import { PrognoziComponent } from './features/prognozi/prognozi.component';
 
@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'Maps', component: MapsComponent
   },
   {
-    path: 'CurrencyExchange', component: CurrencyExchangeComponent
+    path: 'Currency', component: CurrencyComponent
   },
   {
     path: '', redirectTo: 'Prognozi', pathMatch: 'full'

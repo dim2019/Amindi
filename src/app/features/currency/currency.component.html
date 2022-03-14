@@ -1,0 +1,56 @@
+<div class="main-container">
+    <div class="header"></div>
+    <div class="content">
+        <div class="left-section">
+            <div class="main">
+                <div class="head">
+                    <p>
+                        <span>{{firstInputValue | number: '1.0-2'}} </span>
+                        <span>{{cuarrencyValue1 + " in " + cuarrencyValue2}}</span>
+
+                    </p>
+                </div>
+                <div class="container" [formGroup]="form">
+                    <div class="row">
+                        <div class="first-inp">
+                            <input (keyup)="onKeyUpInputOne($event)" formControlName="curencyType1" type="number" placeholder="quantity " [value]="SumFirstInput | number: '1.0-2'">
+                            <select (change)="activitySelectorForFirstInput($event) " name="currency " id="currency-input1">
+                            <option *ngFor="let currency of currencyArray "
+                             [value]="currency" [selected]="currency == 'EUR'">{{currency}}</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="first-inp">
+                            <input (keyup)="onKeyUpInputTwo($event)" formControlName="curencyType2" type="number" placeholder="quantity" [value]="SumSecondInput | number: '1.0-2'">
+                            <select (change)="activitySelectorForSecondInput($event) " name="currency " id="currency-input2">
+                            <option
+                            *ngFor="let currency of currencyArray "
+                             [value]="currency" [selected]="currency == 'EUR'"> {{currency}}</option>
+                        </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="underline-row"></div>
+                    <br>
+                    <p style="margin-left: -12%;">ვალუტების შეკრება</p>
+                    <app-addingcurrency *ngFor="let object of ArrayForAddNewItem; let i=index" [CurencyNameArray]="currencyArray" [InputValue]="object.input" [SelectedValue]="object.Currency" [Index]="i"></app-addingcurrency>
+                    <div class="underline">
+                        <button class="btn btn-outline-info" (click)="on_add_button_click_Listener()">ვალუტის დამატება</button>
+                    </div>
+                    <div class="output first-inp">
+                        <p>ჯამში <span> {{sum | number: '1.0-2' }}</span></p>
+                        <select (change)="activity_Selector_For_Sum($event) " name="currency " id="currency-input2">
+                            <option
+                            *ngFor="let currency of currencyArray "
+                             [value]="currency" [selected]="currency == 'EUR'">{{currency}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-currency-exchange class="right-section"></app-currency-exchange>
+    </div>
+</div>

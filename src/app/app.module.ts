@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LongTermForecastDialogComponent } from './material/long-term-forecast-dialog/long-term-forecast-dialog.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NumberSuffixPipe } from './features/currency-exchange/currencyPipe';
+import { CurrencyComponent } from './features/currency/currency.component';
+import { AddingcurrencyComponent } from './features/currency/addingcurrency/addingcurrency.component';
 
 
 
@@ -26,7 +28,9 @@ import { NumberSuffixPipe } from './features/currency-exchange/currencyPipe';
     PopUpComponent,
     CurrencyExchangeComponent,
     LongTermForecastDialogComponent,
-    NumberSuffixPipe
+    NumberSuffixPipe,
+    CurrencyComponent,
+    AddingcurrencyComponent
   ],
   imports: [
     BrowserModule,

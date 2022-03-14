@@ -1,6 +1,6 @@
 <div class="page">
     <!-- C U R R E N C Y -->
-    <table class="table" *ngIf="false">
+    <table class="table" *ngIf="true">
         <tbody>
             <tr *ngFor="let i of currency_arr">
                 <td>
@@ -34,7 +34,7 @@
 
     <!-- C R Y P T O -->
 
-    <div class="page">
+    <div *ngIf="false" class="page">
         <div class="search">
             <form class="input" [formGroup]="form">
                 <label for="cryptoSearcch">
