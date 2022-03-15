@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { HTTPdata } from 'src/app/interfaces/httpdata';
 import { HTTPdataBindedRates } from 'src/app/interfaces/httpdata-binded-rates';
 import { CurrencyService } from 'src/app/services/currency.service';
@@ -37,11 +38,15 @@ export class CurrencyComponent implements OnInit {
   SumFirstInput: number = 1;
 
 
+  public innerWidth: any
+
+
+
   // ------------------- add Section ----------------------//
 
   
 
-  constructor(private http: HttpClient, public fb: FormBuilder, private service: CurrencyService, private dialog: DialogService) {
+  constructor(private http: HttpClient, public fb: FormBuilder, private service: CurrencyService, private dialog: DialogService, private dialogref: MatDialog) {
    }
 
   ngOnInit(): void {
@@ -62,6 +67,14 @@ export class CurrencyComponent implements OnInit {
   })  
   }
 
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+  this.innerWidth = window.innerWidth;
+  if(this.innerWidth > 850){
+    this.dialogref.closeAll()
+  }
+}
 
   onKeyUpInputOne(event: any){
     this.firstInputValue = event.target.value

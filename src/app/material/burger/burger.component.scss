@@ -13,41 +13,61 @@
             text-align: center;
         }
     }
-    ul {
-        li {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            cursor: pointer;
-            p {
-                color: red;
+    .table {
+        .left {
+            .weather {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                .div1 {
+                    background-image: url('../../../assets/images/Sun.PNG');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 15px;
+                    height: 15px;
+                }
+                p {
+                    font-size: 12px;
+                    margin-top: 15px;
+                }
             }
-            .div1 {
-                background-image: url('../../../assets/images/Sun.PNG');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                width: 50px;
-                height: 50px;
-                margin-left: 122px;
+            .currency {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                .div2 {
+                    background-image: url('../../../assets/images/exchange.PNG');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 15px;
+                    height: 15px;
+                }
+                p {
+                    font-size: 12px;
+                    margin-top: 15px;
+                }
             }
-            .div2 {
-                background-image: url('../../../assets/images/exchange.PNG');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                width: 50px;
-                height: 50px;
-                margin-left: 100px;
-            }
-            .div3 {
-                background-image: url('../../../assets/images/map.PNG');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                width: 50px;
-                height: 50px;
-                margin-left: 215px;
+            .map {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                .div3 {
+                    background-image: url('../../../assets/images/map.PNG');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 15px;
+                    height: 15px;
+                }
+                p {
+                    margin-top: 15px;
+                    font-size: 12px;
+                }
             }
         }
     }

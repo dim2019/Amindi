@@ -40,9 +40,9 @@ export class DialogService {
   }
   openBurgerBar(){
     this.dialogRef.open(BurgerComponent,{
-      width: '30%',
-      height: '82%',
-      position: {top: '50px', left: '10px'},
+      width: '300px',
+      height: '100%',
+      position: {top: '0', left: '0'},
       id: 'burgerBar',
       disableClose: false,
     })

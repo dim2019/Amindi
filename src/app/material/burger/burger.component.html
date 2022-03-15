@@ -2,18 +2,20 @@
     <header>
         <img src="./././assets/images/logo-removebg-preview.png" alt="icon">
     </header>
-    <ul>
-        <li>
-            <p routerLink="/Prognozi" (click)="close()">ამინდის პროგნოზი</p>
-            <div class="div1"></div>
-        </li>
-        <li>
-            <p (click)="close()">ვალუტის კონვერტაცია</p>
-            <div class="div2"></div>
-        </li>
-        <li>
-            <p routerLink="/Maps" (click)="close()">რუკა</p>
-            <div class="div3"></div>
-        </li>
-    </ul>
+    <div class="table">
+        <div class="left">
+            <div class="weather" (click)="close()" routerLink="/Prognozi">
+                <div class="div1"></div>
+                <p>ამინდის პროგნოზი</p>
+            </div>
+            <div class="currency" (click)="close()">
+                <div class="div2"></div>
+                <p>ვალუტის კონვერტაცია</p>
+            </div>
+            <div class="map" (click)="close()" routerLink="/Maps">
+                <div class="div3"></div>
+                <p> რუკა</p>
+            </div>
+        </div>
+    </div>
 </div>

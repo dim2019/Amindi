@@ -42,6 +42,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             cursor: pointer;
+            display: none;
         }
     }
     .content {
@@ -179,5 +180,24 @@
         //     height: 80%;
         //     // backdrop-filter: blur(10px);
         // }
+    }
+}
+
+@media screen and (max-width:850px) {
+    .main-container {
+        .header {
+            .burger {
+                display: block;
+            }
+            button {
+                display: none;
+            }
+        }
+        .content {
+            padding-left: 20px;
+            .left-section {
+                display: none;
+            }
+        }
     }
 }
