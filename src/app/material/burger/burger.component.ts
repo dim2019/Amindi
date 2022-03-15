@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./burger.component.scss']
 })
 export class BurgerComponent implements OnInit {
+  
 
   constructor(private dialogref: MatDialog) { }
 
