@@ -34,8 +34,8 @@ export class CurrencyComponent implements OnInit {
   ExchangeRateSecond: number = 1;
 
 
-  SumSecondInput: number = 1;
-  SumFirstInput: number = 1;
+  SumSecondInput!: number;
+  SumFirstInput!: number;
 
 
   public innerWidth: any

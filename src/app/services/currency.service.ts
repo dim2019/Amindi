@@ -13,8 +13,8 @@ export class CurrencyService {
     Sum: number = 0
 
     ArrayForAddNewItem: Input_and_Currency[] = [
-      {input: 0, Currency: "EUR"},
-      {input: 0, Currency: "EUR"}
+      // {input: 0, Currency: "EUR"},
+      // {input: 0, Currency: "EUR"}
     ]
 
 

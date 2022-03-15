@@ -5,11 +5,11 @@
             justify-content: space-around;
             align-items: center;
             margin-top: 10px;
-            margin-left: -5px;
+            margin-left: -12px;
             input {
                 background: initial;
-                border: 1px solid black;
-                border-radius: 3px;
+                border: none;
+                border-bottom: 1px solid black;
                 outline: none;
                 cursor: pointer;
             }
@@ -27,12 +27,12 @@
                 padding: 10px;
             }
             select {
-                font-size: 14px;
+                font-size: 10px;
                 border: none;
                 // width: 100%;
                 background: white;
                 outline: none;
-                margin-left: 10px;
+                margin-left: 2px;
                 &::-webkit-scrollbar {
                     width: 2px;
                     height: 2px;
@@ -47,7 +47,11 @@
             .x {
                 color: red;
                 cursor: pointer;
-                font-size: 18px;
+                font-size: 14px;
+                margin-left: -10px;
+                &:hover {
+                    color: gray;
+                }
             }
         }
     }

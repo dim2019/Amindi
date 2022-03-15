@@ -10,7 +10,7 @@ export class AddingcurrencyComponent implements OnInit {
 
 
   @Input() CurencyNameArray: string[] = [];
-  @Input() InputValue: number  =  1;
+  @Input() InputValue!: number;
   @Input() SelectedValue: string = 'EUR';
   @Input() Index: number = 0
   form: FormGroup = new FormGroup({});

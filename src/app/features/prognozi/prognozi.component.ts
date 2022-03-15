@@ -53,24 +53,29 @@ export class PrognoziComponent implements OnInit, OnDestroy {
       return './././assets/images/Sun.PNG'
     }else if(this.WeatherInfo?.weather[0]?.main == "Smoke"){
       return './././assets/images/smoke.png'
+    }else if(this.WeatherInfo?.weather[0]?.main == "Haze"){
+      return './././assets/images/fog.png'
     }else{
       return './././assets/images/Snow.PNG'
     }
   }
 
+
   BackGroundImageChanger(){
     if(this.WeatherInfo?.weather[0]?.main == "Clouds"){
-      return `background-image: url('./././assets/images/Image1.PNG');`
+      return `background-image: url('./././assets/images/Image1.png');`
     }else if(this.WeatherInfo?.weather[0]?.main == "Rain"){
-      return `background-image: url('./././assets/images/ImageRainyNight1.PNG')`
+      return `background-image: url('./././assets/images/ImageRainyNight1.png')`
     }else if(this.WeatherInfo?.weather[0]?.main == "Mist"){
-      return `background-image: url('./././assets/images/Mist.PNG');`
+      return `background-image: url('./././assets/images/Mist.png');`
     }else if(this.WeatherInfo?.weather[0]?.main == "Clear"){
-      return `background-image: url('./././assets/images/ImageClearNight1.PNG')`
+      return `background-image: url('./././assets/images/Clearnight.png')`
     }else if(this.WeatherInfo?.weather[0]?.main == "Smoke"){
-      return `background-image: url('./././assets/images/SmokeWeatherBACK.PNG')`
+      return `background-image: url('./././assets/images/SmokeWeatherBACK.png')`
+    }else if(this.WeatherInfo?.weather[0]?.main == "Haze"){
+      return `background-image: url('./././assets/images/Haze.png');`
     }else{
-      return `background-image: url('./././assets/images/ImageSnowDay1.PNG');`
+      return `background-image: url('./././assets/images/ImageSnowDay1.png');`
     }
   }
 

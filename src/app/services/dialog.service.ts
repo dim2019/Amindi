@@ -15,7 +15,7 @@ export class DialogService {
     this.dialogRef.open(PopUpComponent,{
       width: '360px',
       panelClass: 'pop-up',
-      disableClose: true,
+      disableClose: false,
       position: {top: '10px', left: '20px'},
       data: {
         message: date

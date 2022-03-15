@@ -52,6 +52,9 @@
     }
     
     @media screen and (max-width:800px) {
+        html {
+            font-size: 12px;
+        }
         #LongTermForecastDialog {
             transform: translate(4%, 4%) !important;
         }
@@ -63,5 +66,8 @@
     @media screen and (max-width:500px) {
         #LongTermForecastDialog {
             transform: translate(1%, 1%) !important;
+        }
+        html {
+            font-size: 8px;
         }
     }
