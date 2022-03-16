@@ -69,7 +69,7 @@ export class PrognoziComponent implements OnInit, OnDestroy {
     }else if(this.WeatherInfo?.weather[0]?.main == "Mist"){
       return `background-image: url('./././assets/images/Mist.PNG');`
     }else if(this.WeatherInfo?.weather[0]?.main == "Clear"){
-      return `background-image: url('./././assets/images/Clearnight.PNG')`
+      return `background-image: url('./././assets/images/Clearnight.png')`
     }else if(this.WeatherInfo?.weather[0]?.main == "Smoke"){
       return `background-image: url('./././assets/images/SmokeWeatherBACK.PNG')`
     }else if(this.WeatherInfo?.weather[0]?.main == "Haze"){

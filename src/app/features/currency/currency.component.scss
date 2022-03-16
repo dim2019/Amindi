@@ -49,6 +49,24 @@
         width: 100%;
         height: 100%;
         display: flex;
+
+        .changeLeftSectionCss {
+            input {
+                color: white !important;
+            }
+
+            width: 100% !important;
+            height: 100vh !important;
+            padding: 0 20%;
+
+            .underline {
+                button {
+                    margin: 27px 0 20px 0;
+                }
+            }
+
+        }
+
         .left-section {
             width: 25%;
             height: 100%;
@@ -121,6 +139,7 @@
                                 appearance: none;
                                 cursor: pointer;
                             }
+
                             /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
                             @media screen and (-webkit-min-device-pixel-ratio:0) {
                                 select {
@@ -221,6 +240,8 @@
     }
 }
 
+
+
 @media screen and (max-width:850px) {
     .main-container {
         .header {
@@ -233,9 +254,9 @@
         }
         .content {
             padding-left: 20px;
-            .left-section {
-                display: none;
-            }
+            // .left-section {
+            //     display: none;
+            // }
         }
     }
 }
