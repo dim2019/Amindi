@@ -19,8 +19,8 @@ export class BurgerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showCurrencyConventer() {
-    this.dilaogService.leftOrRightSection.next("left")
+  showCurrencyConventer(whichSection : "left" | "right") {
+    this.dilaogService.leftOrRightSection.next(whichSection)
     this.dialogref.closeAll()
   }
 

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HTTPdata } from 'src/app/interfaces/httpdata';
@@ -11,7 +11,7 @@ import { DialogService } from 'src/app/services/dialog.service';
   templateUrl: './currency.component.html',
   styleUrls: ['./currency.component.scss']
 })
-export class CurrencyComponent implements OnInit {
+export class CurrencyComponent implements OnInit, OnDestroy{
 
   currencyArray: string[] = []
   selectedValue: any
@@ -52,6 +52,7 @@ export class CurrencyComponent implements OnInit {
   constructor(private http: HttpClient, public fb: FormBuilder, private service: CurrencyService, private dialog: DialogService, private dialogref: MatDialog) {
   }
 
+
   ngOnInit(): void {
     this.form = this.fb.group({
       curencyType1: [this.SumFirstInput, [Validators.pattern(this.regex)]],
@@ -76,6 +77,8 @@ export class CurrencyComponent implements OnInit {
 
     this.dialog.leftOrRightSection.subscribe((sectionname: "left" | "right") => {
       localStorage.setItem("whichsection", sectionname)
+      this.leftsection.nativeElement.style.display = "none"
+
       this.whichsection = sectionname
 
       if (this.whichsection == "left") {
@@ -191,6 +194,11 @@ export class CurrencyComponent implements OnInit {
 
   get sum() {
     return this.service.Sum
+  }
+
+
+  ngOnDestroy(): void {
+    localStorage.setItem("whichsection", "right")
   }
 
 }
