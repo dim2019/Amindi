@@ -78,11 +78,13 @@ export class CurrencyComponent implements OnInit, OnDestroy{
     this.dialog.leftOrRightSection.subscribe((sectionname: "left" | "right") => {
       localStorage.setItem("whichsection", sectionname)
       this.leftsection.nativeElement.style.display = "none"
+      this.leftsection.nativeElement.style.color = "black"
 
       this.whichsection = sectionname
 
       if (this.whichsection == "left") {
         this.leftsection.nativeElement.style.display = "block"
+        this.leftsection.nativeElement.style.color = "white"
         this.leftsection.nativeElement.classList.add("changeLeftSectionCss");
       }
     })
@@ -92,6 +94,8 @@ export class CurrencyComponent implements OnInit, OnDestroy{
 
     if (window.innerWidth > 850) {
       this.leftsection.nativeElement.style.display = "block"
+      this.leftsection.nativeElement.style.color = "black"
+
       this.leftsection.nativeElement.classList.remove("changeLeftSectionCss");
       this.whichsection = "right"
       localStorage.setItem("whichsection", "right")
@@ -101,9 +105,13 @@ export class CurrencyComponent implements OnInit, OnDestroy{
         this.whichsection = "right"
         localStorage.setItem("whichsection", "right")
         this.leftsection.nativeElement.style.display = "none"
+        this.leftsection.nativeElement.style.color = "white"
+
       } else {
         this.whichsection = "left"
         this.leftsection.nativeElement.style.display = "block"
+        this.leftsection.nativeElement.style.color = "white"
+
         this.leftsection.nativeElement.classList.add("changeLeftSectionCss");
       }
     }
