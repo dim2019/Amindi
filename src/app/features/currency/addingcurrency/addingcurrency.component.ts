@@ -13,6 +13,7 @@ export class AddingcurrencyComponent implements OnInit {
   @Input() InputValue!: number;
   @Input() SelectedValue: string = 'EUR';
   @Input() Index: number = 0
+  @Input() color: "initial" | "white" = "initial"
   form: FormGroup = new FormGroup({});
   protected regex = "^[0-9.]*$"
 

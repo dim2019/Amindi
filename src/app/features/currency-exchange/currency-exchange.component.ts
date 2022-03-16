@@ -69,9 +69,11 @@ export class CurrencyExchangeComponent implements OnInit {
       }
     
    })
-
-   this.changeTab("currency")
-
+   if (localStorage.getItem("whichCurrency") == null) {
+    this.changeTab("currency")
+   } else {
+    this.changeTab(localStorage.getItem("whichCurrency") as "currency" | "crypto")
+   }
   }
 
 
@@ -112,6 +114,7 @@ export class CurrencyExchangeComponent implements OnInit {
   }
 
   changeTab(tabname : "currency" | "crypto") {
+    localStorage.setItem("whichCurrency",tabname)
     this.cryptoOrCurrency = tabname
   }
 

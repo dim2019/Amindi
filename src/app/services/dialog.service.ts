@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Subject } from 'rxjs';
 import { BurgerComponent } from '../material/burger/burger.component';
 import { LongTermForecastDialogComponent } from '../material/long-term-forecast-dialog/long-term-forecast-dialog.component';
 import { PopUpComponent } from '../material/pop-up/pop-up.component';
@@ -10,6 +11,9 @@ import { PopUpComponent } from '../material/pop-up/pop-up.component';
 export class DialogService {
 
   constructor(private dialogRef: MatDialog) { }
+
+  leftOrRightSection : Subject<"left" | "right"> = new Subject<"left" | "right">()
+
 
   openPopUp(date: any){
     this.dialogRef.open(PopUpComponent,{

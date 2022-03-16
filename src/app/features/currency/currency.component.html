@@ -7,8 +7,8 @@
         <button routerLink="/Prognozi">უკან დაბრუნება</button>
 
     </div>
-    <div class="content">
-        <div class="left-section">
+    <div class="content" [ngStyle]="{'background': whichsection == 'left' ? 'rgb(41,41,41)' : ''}">        
+        <div class="left-section" #leftsection>
             <div class="main">
                 <div class="head">
                     <h2>კურსი</h2>
@@ -47,7 +47,7 @@
                     <div class="underline-row"></div>
                     <br>
                     <p style="margin-left: -12%;">ვალუტების შეკრება</p>
-                    <app-addingcurrency *ngFor="let object of ArrayForAddNewItem; let i=index" [CurencyNameArray]="currencyArray" [InputValue]="object.input" [SelectedValue]="object.Currency" [Index]="i"></app-addingcurrency>
+                    <app-addingcurrency *ngFor="let object of ArrayForAddNewItem; let i=index" [color]="whichsection == 'left' ? 'white' : 'initial'" [CurencyNameArray]="currencyArray" [InputValue]="object.input" [SelectedValue]="object.Currency" [Index]="i"></app-addingcurrency>
                     <div class="underline">
                         <button class="btn btn-outline-info" (click)="on_add_button_click_Listener()">ვალუტის დამატება</button>
                     </div>
@@ -63,7 +63,9 @@
             </div>
             <!-- <div *ngFor="let currency of currencyArray " class="currency-flag currency-flag-{{currency.toLowerCase()}}"></div> -->
         </div>
-        <app-currency-exchange class="right-section"></app-currency-exchange>
+
+        <app-currency-exchange *ngIf="whichsection == 'right'" class="right-section"></app-currency-exchange>
+
         <!-- <div class="burger-section">
             <ul>
                 <li>ამინდის პროგნოზი</li>

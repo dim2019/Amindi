@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogService } from 'src/app/services/dialog.service';
 
 @Component({
   selector: 'app-burger',
@@ -8,12 +9,21 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class BurgerComponent implements OnInit {
 
-  constructor(private dialogref: MatDialog) { }
+  constructor(private dialogref: MatDialog, public dilaogService : DialogService) { }
+
+  // onButtonClick() {
+  //   this.onAdd.emit();
+  // }
 
   ngOnInit(): void {
   }
 
-  close(){
+  showCurrencyConventer() {
+    this.dilaogService.leftOrRightSection.next("left")
+    this.dialogref.closeAll()
+  }
+
+  close() {
     this.dialogref.closeAll()
   }
 }
