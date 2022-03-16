@@ -55,14 +55,14 @@ export class CurrencyExchangeComponent implements OnInit {
       });
     this._http
       .get(
-        "https://rest.coinapi.io/v1/assets/icons/64x64?apikey=E8CCCD49-AF94-4830-BCED-1D659F3B1C43"
+        "https://thingproxy.freeboard.io/fetch/https://rest.coinapi.io/v1/assets/icons/64x64?apikey=E8CCCD49-AF94-4830-BCED-1D659F3B1C43"
       )
       .subscribe((res) => {
         for (let i of res as any) {
           this.iconMap.set(i.asset_id, i.url);
         }
   });
-  this._http.get<any>("https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json").subscribe(s=>{
+  this._http.get<any>("https://thingproxy.freeboard.io/fetch/https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json").subscribe(s=>{
     for(let i in (s[0].currencies as any)){
       (this.currency_arr as any)[i]={...(s[0].currencies as any)[i],color:(this.rand_color()?"background-color:rgba(254, 77, 151,9%);":"background-color:rgba(109, 210, 48,9%);")};
         // console.log(this.currency_arr);   
@@ -84,7 +84,7 @@ export class CurrencyExchangeComponent implements OnInit {
 
   imageHasBeenLoaded(event: any) {
     event.url =
-      "https://www.pngplay.com/wp-content/uploads/2/Bitcoin-PNG-Background.png";
+      "https://thingproxy.freeboard.io/fetch/https://www.pngplay.com/wp-content/uploads/2/Bitcoin-PNG-Background.png";
     event.onerror = "";
     return true;
   }

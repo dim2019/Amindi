@@ -149,7 +149,7 @@ export class CurrencyComponent implements OnInit, OnDestroy{
   }
   activitySelectorForFirstInput(clickedCurrency: any) {
     this.cuarrencyValue1 = clickedCurrency.target.value
-    const rateData = this.http.get<HTTPdataBindedRates>(`http://api.exchangeratesapi.io/v1/latest?access_key=b7407949bccd5ba5c47a70cea47e9e26&symbols=${this.cuarrencyValue1}&format=1`)
+    const rateData = this.http.get<HTTPdataBindedRates>(`https://thingproxy.freeboard.io/fetch/http://api.exchangeratesapi.io/v1/latest?access_key=b7407949bccd5ba5c47a70cea47e9e26&symbols=${this.cuarrencyValue1}&format=1`)
     rateData.subscribe(e => {
       let curent = this.cuarrencyValue1
       let intedValue = e.rates[curent]
@@ -163,7 +163,7 @@ export class CurrencyComponent implements OnInit, OnDestroy{
   }
   activitySelectorForSecondInput(clickedCurrency: any) {
     this.cuarrencyValue2 = clickedCurrency.target.value
-    const rateData = this.http.get<HTTPdataBindedRates>(`http://api.exchangeratesapi.io/v1/latest?access_key=b7407949bccd5ba5c47a70cea47e9e26&symbols=${this.cuarrencyValue2}&format=1`)
+    const rateData = this.http.get<HTTPdataBindedRates>(`https://thingproxy.freeboard.io/fetch/http://api.exchangeratesapi.io/v1/latest?access_key=b7407949bccd5ba5c47a70cea47e9e26&symbols=${this.cuarrencyValue2}&format=1`)
     rateData.subscribe(e => {
       let curent = this.cuarrencyValue2
       let intedValue = e.rates[curent]
@@ -186,7 +186,7 @@ export class CurrencyComponent implements OnInit, OnDestroy{
     })
   }
   activity_Selector_For_Sum(element: any) {
-    this.http.get<HTTPdata>('http://api.exchangeratesapi.io/v1/latest?access_key=b7407949bccd5ba5c47a70cea47e9e26&format=1&fbclid=IwAR29psA_a2VD4HmECqbJftUM5wxCKbpLYS7CEGyL-0oUTowe9TYDZMdzx3U')
+    this.http.get<HTTPdata>('https://thingproxy.freeboard.io/fetch/http://api.exchangeratesapi.io/v1/latest?access_key=b7407949bccd5ba5c47a70cea47e9e26&format=1&fbclid=IwAR29psA_a2VD4HmECqbJftUM5wxCKbpLYS7CEGyL-0oUTowe9TYDZMdzx3U')
       .subscribe(e => {
         this.service.rateData = e
         this.service.BaseCurrency = element.target.value

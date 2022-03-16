@@ -30,7 +30,7 @@ export class LongTermForecastDialogComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.dateAndMonths = []
-    this.subscription = this._http.get<any>(`https://api.openweathermap.org/data/2.5/onecall?lat=${JSON.parse(localStorage.getItem('location') as string)[0]}&lon=${JSON.parse(localStorage.getItem('location') as string)[1]}&exclude=minutely&appid=299fb2133133f9d8fc214f5ae28ca753`).subscribe(res => {
+    this.subscription = this._http.get<any>(`https://thingproxy.freeboard.io/fetch/https://api.openweathermap.org/data/2.5/onecall?lat=${JSON.parse(localStorage.getItem('location') as string)[0]}&lon=${JSON.parse(localStorage.getItem('location') as string)[1]}&exclude=minutely&appid=299fb2133133f9d8fc214f5ae28ca753`).subscribe(res => {
       if (this._data.message == 'hourly') {
         this.WeatherInfo = res.hourly
         this.strategy.detectChanges()
